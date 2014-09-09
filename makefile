@@ -7,8 +7,6 @@ OBJ = Server.o Main.o Parser.o RequestObject.o FormatterXml.o FormatterString.o 
 DEPS = Server.h Parser.h RequestObject.h FormatterXml.h FormatterString.h FormatterHtml.h FormatterJson.h TimeUtil.h dcftime_iface.h dcftime_rcp_common.h dcftime_client.h
 
 #Any special libraries you are using in your project (e.g. -lbcm2835 -lrt `pkg-config --libs gtk+-3.0` ), or leave blank
-#LIBS =
-#-iostream -string -vector -stdio.h -iostream -sys/socket.h -netinet/in.h -unistd.h -thread #-pthread -chrono -lboost_system -lboost_thread -lboost_serialization
 LIBS = -pthread -lboost_system -lboost_serialization
 
 #Set any compiler flags you want to use (e.g. -I/usr/include/somefolder `pkg-config --cflags gtk+-3.0` ), or leave blank
