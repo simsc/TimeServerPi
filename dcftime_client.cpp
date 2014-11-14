@@ -4,6 +4,8 @@ using boost::asio::io_service;
 using boost::asio::ip::tcp;
 
 long dcftime_client::dcfTimeUnix() {
+	long result = 0;
+	try {
 	tcp::iostream stream("localhost", "1313");
 	boost::archive::binary_oarchive oarchive{ stream };
 
@@ -12,7 +14,11 @@ long dcftime_client::dcfTimeUnix() {
 	stream.flush();
 
 	boost::archive::binary_iarchive iarchive{ stream };
-	long result;
 	iarchive >> result;
+	}
+	catch (boost::archive::archive_exception ex)
+	{
+		std::cout << "ex caught" << std::endl;
+	}
 	return result;
 }

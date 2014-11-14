@@ -47,7 +47,7 @@ void Server::acceptConnection(int newsockfd)
         std::cerr << "ERROR writing to socket\n";
     }
     close(newsockfd);
-    
+
     std::cout << "Finished: SockId " << newsockfd << "\n";
 }
 
@@ -57,31 +57,31 @@ void Server::serve()
     serving = true;
     int sockfd, portno = 80;
     socklen_t clilen;
-    
+
     // sockaddr_in is defined in in.h, contains internet address
     struct sockaddr_in serv_addr, cli_addr;
-    
+
     // AF_INET : internet version 4 protocol
     // SOCK_STREAM : reliable two-way connection
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0)
         error("ERROR opening socket");
-    
+
     // bzero: write zeros to a byte string
     bzero((char *) &serv_addr, sizeof(serv_addr));
-    
+
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;	// allows to receive from any interface
     serv_addr.sin_port = htons(portno);		// host to network byteorder short
-    
+
     // bind assigns address to socket
     if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
         error("ERROR on binding");
-    
+
     // wait for incoming connections
     listen(sockfd, 5);
     clilen = sizeof(cli_addr);
-    
+
     while(serving){
         int newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         if (newsockfd < 0)

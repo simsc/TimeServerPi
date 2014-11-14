@@ -1,4 +1,5 @@
 #include "TimeUtil.h"
+#include "dcftime_client.h"
 
 #include <time.h>
 #include <string>
@@ -22,6 +23,12 @@ std::string TimeUtil::getRepsonse(std::string request) {
     tm *now;
     timestamp = time(0); //params: 0 or the address of a time_t variable, if 0 you can init a variable
     now = localtime(&timestamp);
+
+	// get the time from local 'server'
+	dcftime_client client;
+	long time = client.dcfTimeUnix();
+	std::cout << "Time from Server: " << time << std::endl;
+	now = localtime(&time);
 
     // parse request string
     int i = m_parser.parse(request, m_requestObject);
