@@ -5,6 +5,9 @@
 #include "Server.h"
 #include <thread>
 
+#include "dcftime_client.h"
+#include "dcftime_iface.h"
+
 int main(void)
 {
     Server *s = new Server();
