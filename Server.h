@@ -2,7 +2,7 @@
 //  Server.h
 //  Server
 //
-//  Created by Simon on 30.10.14.
+//  Created by Simon on 30.10.14
 //  Copyright (c) 2014 Simon. All rights reserved.
 //
 
