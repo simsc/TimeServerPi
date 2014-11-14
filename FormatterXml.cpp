@@ -1,17 +1,17 @@
 #include "FormatterXml.h"
 
 
-XmlFormatter::XmlFormatter()
+FormatterXml::FormatterXml()
 {
 }
 
 
-XmlFormatter::~XmlFormatter()
+FormatterXml::~FormatterXml()
 {
 }
 
 
-string XmlFormatter::format(tm* nun){
+string FormatterXml::format(tm* nun){
 
 	string str = "";
 	str.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");

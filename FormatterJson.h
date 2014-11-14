@@ -1,10 +1,10 @@
 #include "Formatter.h"
 
-class JsonFormatter : public Formatter
+class FormatterJson : public Formatter
 {
 public:
-	JsonFormatter();
-	~JsonFormatter();
+    FormatterJson();
+    ~FormatterJson();
 	string format(tm*);
 };
 

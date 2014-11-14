@@ -1,10 +1,10 @@
 #include "Formatter.h"
 
-class XmlFormatter : public Formatter
+class FormatterXml : public Formatter
 {
 public:
-	XmlFormatter();
-	~XmlFormatter();
+    FormatterXml();
+    ~FormatterXml();
 	string format(tm*);
 };
 

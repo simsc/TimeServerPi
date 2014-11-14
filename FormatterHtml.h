@@ -1,10 +1,10 @@
 #include "Formatter.h"
 
-class HtmlFormatter : public Formatter
+class FormatterHtml : public Formatter
 {
 public:
-	HtmlFormatter();
-	~HtmlFormatter();
+    FormatterHtml();
+    ~FormatterHtml();
 	string format(tm*);
 };
 

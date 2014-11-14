@@ -1,10 +1,10 @@
 #include "Formatter.h"
 
-class StringFormatter : public Formatter
+class FormatterString : public Formatter
 {
 public:
-	StringFormatter();
-	~StringFormatter();
+    FormatterString();
+    ~FormatterString();
 	string format(tm*);
 };
 

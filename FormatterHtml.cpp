@@ -2,19 +2,19 @@
 #include "FormatterString.h"
 
 
-HtmlFormatter::HtmlFormatter()
+FormatterHtml::FormatterHtml()
 {
 }
 
-HtmlFormatter::~HtmlFormatter()
+FormatterHtml::~FormatterHtml()
 {
 }
 
-string HtmlFormatter::format(tm* nun){
+string FormatterHtml::format(tm* nun){
 
 	string str = "";
 	str.append("<html><head><title>Date and Time</title></head><body><p>");
-	StringFormatter* s = new StringFormatter();
+    FormatterString* s = new FormatterString();
 	str.append(s->format(nun));		//day
 	str.append("</p></body></html>");
 

@@ -1,12 +1,12 @@
 #include "FormatterJson.h"
 
 
-JsonFormatter::JsonFormatter()
+FormatterJson::FormatterJson()
 {
 }
 
 
-JsonFormatter::~JsonFormatter()
+FormatterJson::~FormatterJson()
 {
 }
 
@@ -24,7 +24,7 @@ JsonFormatter::~JsonFormatter()
 }
 }
 */
-string JsonFormatter::format(tm* nun){
+string FormatterJson::format(tm* nun){
 
 	string str = "";
 	str.append("{\"date\": {\"day\": \"");								//{

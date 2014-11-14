@@ -1,15 +1,15 @@
 #include "FormatterString.h"
 #include <iostream>
 
-StringFormatter::StringFormatter()
+FormatterString::FormatterString()
 {
 }
 
-StringFormatter::~StringFormatter()
+FormatterString::~FormatterString()
 {
 }
 
-string StringFormatter::format(tm* nun){
+string FormatterString::format(tm* nun){
 
 	string str = ""; 
 	str.append(to_string(nun->tm_mday));		// day
